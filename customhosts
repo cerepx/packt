@@ -1,0 +1,10 @@
+# my custom hosts
+[db]
+192.168.56.31 ansible_ssh_user=vagrant
+
+[www]
+www-01.cerepx.com ansible_ssh_user=ubuntu
+www-02 ansible_ssh_user=vagrant
+
+[lb]
+lb0.cerepx.com
