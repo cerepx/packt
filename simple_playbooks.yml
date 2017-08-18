@@ -1,8 +1,8 @@
 ---
 - hosts: all
   remote_user: vagrant
-  sudo: yes
-  
+  become: yes
+
   tasks:
   - group:
       name: devops
@@ -20,7 +20,7 @@
 
 - hosts: www
   user: vagrant
-  sudo: yes
+  become: yes
 
   tasks:  
   - name: add official nginx repository
