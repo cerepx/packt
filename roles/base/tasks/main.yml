@@ -1,0 +1,8 @@
+---
+# common tasks. should run on all nodes
+- name: created devops group
+  group: name=devops state=present
+- name: create devops user
+  user: name=devops comment="DevOps user" uid=2001 group=devops
+- name: install htop package
+  action: apt name=htop state=present update_cache=yes
