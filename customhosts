@@ -4,8 +4,8 @@
 192.168.56.34 ansible_ssh_user=vagrant
 
 [www]
-www-01.cerepx.com ansible_ssh_user=vagrant
-www-02 ansible_ssh_user=vagrant
+#www-01.cerepx.com ansible_ssh_user=vagrant
+#www-02 ansible_ssh_user=vagrant
 
 [lb]
-lb0.cerepx.com
+#lb0.cerepx.com
