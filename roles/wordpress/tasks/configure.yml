@@ -5,7 +5,7 @@
       state: directory
       owner: "{{ wp_user }}"
       group: "{{ wp_group }}"
-      recursive: true
+      recurse: yes
 
   - name: get unique salt for wordpress
     local_action: command curl https://api.wordpress.org/secret-key/1.1/salt
@@ -14,5 +14,7 @@
   - name: copy wordpress template
     template:
       src: wp-config.php.j2
-      dst: "{{ wp_docroot }}/{{ wp_sitedir }}/wp-config.php"
+      dest: "{{ wp_docroot }}/{{ wp_sitedir }}/wp-config.php"
+      owner: "{{ wp_user }}"
+      group: "{{ wp_group }}"
       mode: 0644

@@ -3,8 +3,8 @@
  - name: Download wordpress
    command: /usr/bin/wget -c https://wordpress.org/latest.tar.gz
    args:
-     chdir: "{{ wp_srcdir}}"
-     creates: "{{ wp_srcdir}}/latest.tar.gz"
+     chdir: "{{ wp_srcdir }}"
+     creates: "{{ wp_srcdir }}/latest.tar.gz"
    register: wp_download
 
  - name: create nginx docroot
@@ -14,9 +14,10 @@
      owner: "{{ wp_user }}"
      group: "{{ wp_group }}"
 
- - name:
-   shell: "tar xvzf latest.tar.gz && mv wordpress {{ wp_docroot }}/{{ wp_sitegroup}}"
+ - name: extract wordpress
+   shell: "tar xvzf latest.tar.gz && mv wordpress {{ wp_docroot }}/{{ wp_sitedir }}"
    args:
      chdir: "{{ wp_srcdir }}"
      creates: "{{ wp_docroot }}/{{ wp_sitedir }}"
    when: wp_download.rc == 0
+

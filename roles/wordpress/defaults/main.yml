@@ -1,2 +1,9 @@
 ---
 # defaults file for wordpress
+wp_srcdir: /tmp 
+wp_docroot: /usr/share/nginx/html 
+wp_user: www-data
+wp_group: www-data
+wp_sitedir: wordpress
+wp_dbhost: 192.168.56.31
+wp_dbpass: wordpresspass
